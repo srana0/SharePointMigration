@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DEA3B87-E3AA-449C-BAF7-918489C1D295}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharePointSiteComparer</RootNamespace>
+    <AssemblyName>SharePointSiteComparer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Solution Items\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Solution Items\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xmldiffpatch">
+      <HintPath>C:\Users\a551450\Documents\MSDN\SQLXML Bulkload in .NET Code Sample\xmldiffpatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View">
+      <HintPath>C:\Users\a551450\Documents\MSDN\SQLXML Bulkload in .NET Code Sample\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ClaimHelper.cs" />
+    <Compile Include="Factory\Constants.cs" />
+    <Compile Include="Factory\CrawlFactory.cs" />
+    <Compile Include="Helpers\SharePointHelper.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
+    <Compile Include="Helpers\XMLDocumentHelper.cs" />
+    <Compile Include="Interfaces\ICrawlConfiguration.cs" />
+    <Compile Include="Interfaces\ISiteCrawler.cs" />
+    <Compile Include="Models\DocumentInfo.cs" />
+    <Compile Include="Models\LibrayInfo.cs" />
+    <Compile Include="Models\WebModel.cs" />
+    <Compile Include="Models\WebInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site Crawlers\SP2007SiteCrawler.cs" />
+    <Compile Include="Site Crawlers\SP2010OnwardsSiteCrawler.cs" />
+    <Compile Include="Site Crawlers\SPOnlineSiteCrawler.cs" />
+    <Compile Include="SiteComparer.cs" />
+    <Compile Include="Web References\SPMigrationCorpListWebvice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SPMigrationCorpVersionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SPMigrationCorpWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Class Diagram\SharePointSiteComparerDiagram.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SPMigrationCorpListWebvice\Lists.wsdl" />
+    <None Include="Web References\SPMigrationCorpListWebvice\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SPMigrationCorpVersionService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SPMigrationCorpVersionService\versions.wsdl" />
+    <None Include="Web References\SPMigrationCorpWebService\CustomizedPageStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SPMigrationCorpWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SPMigrationCorpWebService\Webs.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SPMigrationCorpListWebvice\Lists.disco" />
+    <None Include="Web References\SPMigrationCorpWebService\Webs.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://test-sharepoint2007.domain.com/sites/GuruTest//_vti_bin/Webs.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SPMigrationCorpWebService\</RelPath>
+      <UpdateFromURL>http://test-sharepoint2007.domain.com/sites/GuruTest//_vti_bin/Webs.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SharePointSiteComparer_SPMigrationCorpWebService_Webs</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://test-sharepoint2007.domain.com/sites/GuruTest/_vti_bin/Lists.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SPMigrationCorpListWebvice\</RelPath>
+      <UpdateFromURL>http://test-sharepoint2007.domain.com/sites/GuruTest/_vti_bin/Lists.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SharePointSiteComparer_SPMigrationCorpListWebvice_Lists</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://test-sharepoint2007.domain.com/sites/GuruTest/_vti_bin/versions.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SPMigrationCorpVersionService\</RelPath>
+      <UpdateFromURL>http://test-sharepoint2007.domain.com/sites/GuruTest/_vti_bin/versions.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SharePointSiteComparer_SPMigrationCorpVersionService_Versions</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Solution Items\DocumentFormat.OpenXml.dll" />
+    <Content Include="Solution Items\log4net.dll" />
+    <Content Include="Solution Items\Microsoft.SharePoint.Client.dll" />
+    <Content Include="Solution Items\Microsoft.SharePoint.Client.Runtime.dll" />
+    <Content Include="Solution Items\Newtonsoft.Json.dll" />
+    <Content Include="Solution Items\Ninject.dll" />
+    <Content Include="Solution Items\Ninject.Web.Common.dll" />
+    <Content Include="Solution Items\Ninject.Web.WebApi.dll" />
+    <Content Include="Solution Items\xmldiffpatch.dll" />
+    <Content Include="Solution Items\XmlDiffPatch.View.dll" />
+    <None Include="Web References\SPMigrationCorpVersionService\versions.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

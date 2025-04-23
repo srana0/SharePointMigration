@@ -1,0 +1,67 @@
+﻿namespace SharePointSiteComparer.Site_Crawlers
+{
+    #region Namespace
+
+    using Helpers;
+    using Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Net;
+
+    #endregion Namespace
+
+    public class SP2007SiteCrawler : ISiteCrawler, ICrawlConfiguration
+    {
+        public string SiteUrl { get; set; }
+
+        public ICredentials Credentials { get; set; }
+
+        public bool IsRecursiveCrawl { get; set; }
+
+        private ISiteCrawler SiteCrawler { get; set; }
+
+        public SP2007SiteCrawler(string siteUrl, ICredentials credentials, bool isRecursiveCrawl)
+        {
+            this.SiteUrl = siteUrl;
+            this.Credentials = credentials;
+            this.IsRecursiveCrawl = isRecursiveCrawl;
+        }
+
+        public Web Crawl()
+        {
+            Web web = new Web();
+
+            try
+            {
+                string webUrl = this.SiteUrl;
+                ICredentials credentials = this.Credentials;
+                bool isRecursiveCrawl = this.IsRecursiveCrawl;
+
+                string webTitle = SharePointSiteComparer.Helpers.SharePointHelper.GetWebTitleSP2007Web(webUrl, credentials);
+                List<string> libraryNames = SharePointSiteComparer.Helpers.SharePointHelper.GetLibrariesSP2007Web(webUrl, credentials);
+                List<Library> libraries = new List<Library>();
+                List<Document> documents = new List<Document>();
+                foreach (var libraryName in libraryNames)
+                {
+                    documents = SharePointSiteComparer.Helpers.SharePointHelper.GetDocumentsSP2007Web(this.SiteUrl, libraryName, credentials);
+                    libraries.Add(new Library() { LibraryName = libraryName, Documents = documents });
+                }
+
+                if (!isRecursiveCrawl)
+                {
+                    web = new Web() { WebTitle = webTitle, WebUrl = webUrl, Libraries = libraries, SubWebs = null };
+                }
+                else
+                {
+                    List<Web> subWebs = SharePointHelper.GetSubWebsSP2007(webUrl, credentials, IsRecursiveCrawl, SiteCrawler);
+                    web = new Web() { WebTitle = webTitle, WebUrl = webUrl, Libraries = libraries, SubWebs = subWebs };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return web;
+        }
+    }
+}

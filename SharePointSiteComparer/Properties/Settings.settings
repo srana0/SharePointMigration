@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SharePointSiteComparer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SharePointSiteComparer_SPMigrationCorpWebService_Webs" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test-sharepoint2007.mydomain.com/_vti_bin/Webs.asmx</Value>
+    </Setting>
+    <Setting Name="SharePointSiteComparer_SPMigrationCorpListWebvice_Lists" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test-sharepoint2007.mydomain.com/_vti_bin/Lists.asmx</Value>
+    </Setting>
+    <Setting Name="SharePointSiteComparer_SPMigrationCorpVersionService_Versions" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test-sharepoint2007.mydomain.com/_vti_bin/versions.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

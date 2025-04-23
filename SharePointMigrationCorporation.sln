@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointSiteComparer", "SharePointSiteComparer\SharePointSiteComparer.csproj", "{8DEA3B87-E3AA-449C-BAF7-918489C1D295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteComparerForm", "SiteComparerForm\SiteComparerForm.csproj", "{E3BC38AC-2494-4470-BDE6-D39019D5BC0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{79B43525-AA69-4456-A432-4CFAD38413A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DEA3B87-E3AA-449C-BAF7-918489C1D295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEA3B87-E3AA-449C-BAF7-918489C1D295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEA3B87-E3AA-449C-BAF7-918489C1D295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEA3B87-E3AA-449C-BAF7-918489C1D295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BC38AC-2494-4470-BDE6-D39019D5BC0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BC38AC-2494-4470-BDE6-D39019D5BC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BC38AC-2494-4470-BDE6-D39019D5BC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BC38AC-2494-4470-BDE6-D39019D5BC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B43525-AA69-4456-A432-4CFAD38413A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B43525-AA69-4456-A432-4CFAD38413A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B43525-AA69-4456-A432-4CFAD38413A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B43525-AA69-4456-A432-4CFAD38413A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
